@@ -37,4 +37,12 @@ from sklearn.model_selection import train_test_split
 X_Train, X_Test, Y_Train, Y_Test = train_test_split(X,Y, test_size=0.2, random_state=1)
 print(X_Train)
 
+#Feature Scaling of matrix
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_Train[:,3:] = sc.fit_transform(X_Train[:,3:])
+X_Test[:,3:] = sc.transform(X_Test[:,3:])
+
+print(X_Train)
+
 # %%
